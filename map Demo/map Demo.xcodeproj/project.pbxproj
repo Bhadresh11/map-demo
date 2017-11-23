@@ -618,14 +618,15 @@
 			baseConfigurationReference = 99B137CCFE13162BB9C889E9 /* Pods-map Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = H78WKC5P3V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "map Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.airit.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.map.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d281e392-6ee7-4bd2-8cd2-1cedc2c08df0";
-				PROVISIONING_PROFILE_SPECIFIER = AirIr_new_Development_new_25Sep;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -635,14 +636,15 @@
 			baseConfigurationReference = 4DC8C91181B94503D8372719 /* Pods-map Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = H78WKC5P3V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "map Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.airit.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.map.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d281e392-6ee7-4bd2-8cd2-1cedc2c08df0";
-				PROVISIONING_PROFILE_SPECIFIER = AirIr_new_Development_new_25Sep;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //Display my current location
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:23.0225  longitude:72.5714 zoom:12];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:23.0225  longitude:72.5714 zoom:12 bearing:180 viewingAngle:180];
     [_GoogleMapView setCamera:camera];
 
     _GoogleMapView.settings.compassButton = YES;
@@ -27,7 +27,6 @@
 
     _GoogleMapView.myLocationEnabled = YES;
     _GoogleMapView.delegate = self;
-
     
     //
     locationManager = [[CLLocationManager alloc] init];
@@ -48,8 +47,11 @@
     
     if (CurrentLocation != nil)
     {
-        GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:CurrentLocation.coordinate.latitude  longitude:CurrentLocation.coordinate.longitude zoom:12];
+        GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:CurrentLocation.coordinate.latitude  longitude:CurrentLocation.coordinate.longitude zoom:20 bearing:180
+                                                             viewingAngle:180];
         [_GoogleMapView setCamera:camera];
+    
+    
     
     CLLocationCoordinate2D position = CLLocationCoordinate2DMake(CurrentLocation.coordinate.latitude, CurrentLocation.coordinate.longitude);
     GMSMarker *marker = [GMSMarker markerWithPosition:position];
@@ -59,12 +61,12 @@
     //set static marker
     CLLocationCoordinate2D position1 = CLLocationCoordinate2DMake(CurrentLocation.coordinate.latitude-0.01, CurrentLocation.coordinate.longitude - 0.01);
     GMSMarker *marker1 = [GMSMarker markerWithPosition:position1];
-    marker1.title = @"Target 1";
+    marker1.title = @"item 1";
     marker1.map = _GoogleMapView;
     
     CLLocationCoordinate2D position2 = CLLocationCoordinate2DMake(CurrentLocation.coordinate.latitude+0.001, CurrentLocation.coordinate.longitude+0.0001);
     GMSMarker *marker2 = [GMSMarker markerWithPosition:position2];
-    marker2.title = @"Target 2";
+    marker2.title = @"item 2";
     marker2.map = _GoogleMapView;
     }
    
@@ -79,6 +81,14 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
+}
+- (void)locationManager:(CLLocationManager *)manager
+       didUpdateHeading:(CLHeading *)newHeading
+{
+    double rotation = newHeading.magneticHeading * 3.14159 / 180;
+    CGPoint anchorPoint = CGPointMake(0, -23); // The anchor point for your pin
+    
+    [_GoogleMapView setTransform:CGAffineTransformMakeRotation(-rotation)];
 }
 #pragma mark- GoogleMap Delegate
 - (void) mapView: (GMSMapView *)mapView didChangeCameraPosition: (GMSCameraPosition *)position

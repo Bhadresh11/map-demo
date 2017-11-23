@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv4-ua-P66" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="84" width="375" height="519"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Cw7-SJ-hYX"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-ke-AzE">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-ke-AzE">
                                 <rect key="frame" x="300" y="45" width="75" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <state key="normal" title="Set target"/>
@@ -37,8 +37,8 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vv4-ua-P66" secondAttribute="trailing" id="RIQ-Ij-9uK"/>
                             <constraint firstItem="Vv4-ua-P66" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sjg-8j-Huw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vv4-ua-P66" secondAttribute="bottom" constant="64" id="Vmd-Kp-RD6"/>
-                            <constraint firstItem="Vv4-ua-P66" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="dky-LA-6KW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vv4-ua-P66" secondAttribute="bottom" id="Vmd-Kp-RD6"/>
+                            <constraint firstItem="Vv4-ua-P66" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dky-LA-6KW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
